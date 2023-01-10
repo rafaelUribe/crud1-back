@@ -1,0 +1,33 @@
+table "public"."car" {
+  primaryKey = {
+    columns = [
+      "id"
+    ]
+    name = "car_pkey"
+    objectType = primaryKey
+  }
+  columns = (
+    column "id" {
+      type = integer
+      null = NOT NULL
+      default = nextval('public.car_id_seq'::regclass)
+    }
+    column "name" {
+      type = character varying(255)
+    }
+    column "brand" {
+      type = integer
+    }
+  )
+}
+
+foreignKey "public"."car"."fkoy4thvf8dwr86kib5quy9esgt" {
+  columns = [
+    "brand"
+  ]
+  referencedTable = "public"."brand"
+  referencedColumns = [
+    "id_brand"
+  ]
+}
+

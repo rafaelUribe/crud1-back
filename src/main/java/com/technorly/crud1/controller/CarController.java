@@ -9,7 +9,7 @@ import com.technorly.crud1.entity.*;
 
 @RestController
 @RequestMapping("/api/car")
-@CrossOrigin(origins = "*")
+@CrossOrigin("http://localhost:4200/")
 public class CarController {
 
     @Autowired

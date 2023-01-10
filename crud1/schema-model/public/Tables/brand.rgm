@@ -1,0 +1,20 @@
+table "public"."brand" {
+  primaryKey = {
+    columns = [
+      "id_brand"
+    ]
+    name = "brand_pkey"
+    objectType = primaryKey
+  }
+  columns = (
+    column "id_brand" {
+      type = integer
+      null = NOT NULL
+      default = nextval('public.brand_id_brand_seq'::regclass)
+    }
+    column "name" {
+      type = character varying(255)
+    }
+  )
+}
+
